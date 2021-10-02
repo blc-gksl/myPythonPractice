@@ -1,5 +1,6 @@
 import random
 import art
+from replit import clear
 
 def blackjack():
 
@@ -14,6 +15,7 @@ def blackjack():
     if wanna_play == "n":
         return
     else:
+        clear()
         print(art.logo)
         cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
@@ -51,7 +53,7 @@ def blackjack():
                 print(
                     f"Computer's final hand: {computerCards}, final score: {computerScore}"
                 )
-                print("You went over, you lose!")
+                print("You went over, you lose!\n")
             elif computerScore > 21:
                 print(f"Your cards: {yourCards}, current score: {yourScore}")
                 print(f"Computer's first card: {computerCards[0]}\n")
@@ -60,7 +62,7 @@ def blackjack():
                 print(
                     f"Computer's final hand: {computerCards}, final score: {computerScore}"
                 )
-                print("You won!")
+                print("You won!\n")
             elif yourScore == computerScore:
                 print(f"Your cards: {yourCards}, current score: {yourScore}")
                 print(f"Computer's first card: {computerCards[0]}\n")
@@ -69,12 +71,12 @@ def blackjack():
                 print(
                     f"Computer's final hand: {computerCards}, final score: {computerScore}"
                 )
-                print("It is a draw ;)")
+                print("It is a draw ;)\n")
             elif yourScore > computerScore:
                 print(f"Your cards: {yourCards}, current score: {yourScore}")
                 print(f"Computer's first card: {computerCards[0]}\n")
                 print(
-                    f"Your final hand: {yourCards}, final score: {yourScore}")
+                    f"Your final hand: {yourCards}, final score: {yourScore}\n")
                 print(
                     f"Computer's final hand: {computerCards}, final score: {computerScore}"
                 )
@@ -87,7 +89,7 @@ def blackjack():
                 print(
                     f"Computer's final hand: {computerCards}, final score: {computerScore}"
                 )
-                print("Computer is closer, you lost!")
+                print("Computer is closer, you lost!\n")
 
         while True:
             print(f"Your cards: {yourCards}, current score: {yourScore}")
@@ -118,5 +120,6 @@ def blackjack():
                     yourCards += [aNewCard]
                     yourScore = sum(yourCards)
                     continue
+    blackjack()
 
 blackjack()
